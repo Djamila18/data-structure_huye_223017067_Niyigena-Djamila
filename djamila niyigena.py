@@ -1,12 +1,12 @@
 from collections import deque
 
-projects = []  # List to store projects
-undo_stack = []  # Stack for undo
-pending_queue = deque()  # Queue for pending submissions
+projects = [] 
+undo_stack = []
+pending_queue = deque()
 
 def add_project(project):
         projects.append(project)
-        undo_stack.append( project)  # Store the action for undo
+        undo_stack.append( project)
         print(f'Added project: {project}')
 
 def remove_project(project):
@@ -32,7 +32,7 @@ def submit_project(projects):
             print(f'Project not found for submission:')
 def process_submission():
     if pending_queue:
-            project = pending_queue.popleft()  # Process the first submission
+            project = pending_queue.popleft() 
             print(f'Processed submission for: {project}')
     else:
         print('No pending submissions')
